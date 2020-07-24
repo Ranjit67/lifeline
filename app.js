@@ -24,7 +24,7 @@ app.get("/succes",(req,res)=>{
 })
 
 if(process.env.NODE_ENV==="production"){
-    app.use(express.static("fronend/build"));
+    app.use(express.static(process.env.PWD +"fronend/build"));
 
 
     app.get('*',(req,res)=>{
