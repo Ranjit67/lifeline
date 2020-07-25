@@ -23,12 +23,12 @@ app.get("/succes",(req,res)=>{
     res.send("Hello!! Ranjit");
 })
 
-if(process.env.NODE_ENV==="production"){
-    app.use(express.static(process.env.PWD +"fronend/build"));
+if(process.env.PROD){
+    app.use(express.static(__dirname +"./fronend/build"));
 
 
     app.get('*',(req,res)=>{
-res.sendFile(path.join(__dirname,'frontend','public'));
+res.sendFile(path.join(__dirname,"./frontend/public"));
     })
     
 }
